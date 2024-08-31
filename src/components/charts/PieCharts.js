@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 
-const PieCharts = ({ setTotal }) => {
+const PieCharts = () => {
+  const [total, setTotal] = useState(0);
+
   const data = [
     { name: "WooCommerce Store", value: 1116 },
     { name: "Shopify Store", value: 884 },
@@ -62,6 +64,28 @@ const PieCharts = ({ setTotal }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
+        <text
+          x="50%"
+          y="30%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontSize={17}
+          fontWeight="500"
+          fill="#303030"
+        >
+          Total
+        </text>
+        <text
+          x="50%"
+          y="35%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontSize={20}
+          fontWeight="bold"
+          fill="black"
+        >
+          {total}
+        </text>
       </PieChart>
     </ResponsiveContainer>
   );

@@ -8,7 +8,6 @@ import MobileMenu from "../../components/mobileMenu/MobileMenu";
 import { MenuContext } from "../../App";
 
 const Home = () => {
-  const [total, setTotal] = useState(0);
   const { mobileMenu } = useContext(MenuContext);
 
   return (
@@ -54,14 +53,8 @@ const Home = () => {
               </div>
 
               <div className="relative flex justify-center items-center w-full h-full">
-                <p className="absolute top-[144px] z-10 text-gray-700 font-medium">
-                  Total
-                </p>
-                <p className="absolute top-[167px] z-10 text-black font-semibold text-xl">
-                  {total}
-                </p>
-                <PieCharts setTotal={setTotal} />
-                <div className="absolute flex items-center space-x-5 top-[300px]">
+                <PieCharts />
+                <div className="absolute flex items-center space-x-5 mt-20">
                   <span className="flex items-center">
                     <GoDotFill color="#ff8080" size={25} />
                     WooCommerce Store
